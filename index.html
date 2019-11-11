@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>SalesApp Welcome Page</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css">
+		
+		
+		
+		<link rel="stylesheet" href="styles.css">
+        
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header fixed">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">SalesApp</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="#">HOME</a></li>
+        <li><a href="#">TEAMS</a></li>
+        <li><a href="#">CONTACT US</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container" style="margin-top:60px";>
+  <h2>Codezoomers-Sales App</h2>
+  <p>This App is Designed to Assist Codezoomers in their Daily Record Keeping. </p>
+  <ul class="nav nav-pills">
+    <li class="active"><a data-toggle="pill" href="#home">Revenue</a></li>
+    <li><a data-toggle="pill" href="#menu1">Expenses</a></li>
+    <li><a data-toggle="pill" href="#menu2">Reports</a></li>
+    <li><a data-toggle="pill" href="#menu3">Inventory</a></li>
+  </ul>
+  <table id= "demo">
+  <div class="tab-content">
+    <div id="home" class="tab-pane fade in active">
+      <h3>Revenue</h3>
+      <form>
+	  
+	  <div class="form-group col-md-4 ">
+	 <label for="sel1">Sales Category:</label>
+      <select class="form-control" id="sel1">
+		<option>Select</option>
+        <option>Binding</option>
+        <option>DI Print</option>
+        <option>Design</option>
+        <option>Course Fee</option>
+		<option>Website</option>
+		<option>Color Print</option>
+		<option>ID Card</option>
+		<option>SAV</option>
+		<option>Online.Reg</option>
+		<option>LOGO</option>
+		<option>Internet</option>
+		<option>Wedding Cards</option>
+		<option>Typing</option>
+		<option>JOtter</option>
+		<option>Photocopy</option>
+		<option>Doc. Editing</option>
+		<option>Laminating</option>
+      </select>
+	  </div>
+     
+	 <div class="form-group col-md-4 ">
+	  <label for="Amount">Amount:</label>
+	   <input id="amt" type="number" class="form-control" placeholder="Amount">
+	   </div>
+	   
+	   <div class="form-group col-md-4 ">
+	  <label for="sel1">Methods Of Payment:</label>
+      <select class="form-control" id="sell">
+		<option>Select</option>
+        <option value="POS">POS</option>
+        <option value="Cash">Cash</option>
+        <option value="Transfer">Transfer</option>
+      </select>
+      <br>
+	  </div>
+	  
+	<div class="form-group col-md-8 ">
+	 <label for="comment">Comment:</label>
+      <textarea class="form-control" rows="5" id="comment"></textarea><br>
+	  </div>
+	  
+	  <div class="form-group col-md-4 ">
+	  <button type="button" class="btn btn-success" onclick="pay()">Submit</button>
+	  </div>
+  </form>
+    </div>
+	
+    <div id="menu1" class="tab-pane fade">
+      <h3>Expenses</h3>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+    <div id="menu2" class="tab-pane fade">
+      <h3>Reports</h3>
+      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+    </div>
+    <div id="menu3" class="tab-pane fade">
+      <h3>Inventory</h3>
+      <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+    </div>
+  </div>
+</div>
+ <div class="table-responsive">          
+  <table class="table" id="table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Category</th>
+        <th>Amount</th>
+        <th>Methods Of Payment</th>
+        <th>Description</th>
+       
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <td id="Cat"></td>
+        <td id="Amt"></td>
+        <td id="MOP"></td>
+        <td id="com"></td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+ 
+<script>
+function pay() {
+    var num = "";
+    var MOP = document.getElementById("sell").value;
+	var Amt = document.getElementById("amt").value;
+	var Cat = document.getElementById("sel1").value;
+	var com = document.getElementById("comment").value;
+    
+var serial = [];
+serial.push({Number:num,com:comment,Cat:sel1,Amt:num,MOP:sell});
+
+/*for(i=0; i < serial.length; i++ ){
+num +=serial[i] + "<br>";
+
+
+}*/
+for(i=0; i < serial.length; i++){
+num +=" " + Number(i+1) + " "+serial[i].category+" "+serial[i].amount+" "+serial[i].MOP+" ";
+
+    document.getElementById("MOP").innerHTML = MOP;
+	document.getElementById("Amt").innerHTML = Amt;
+	document.getElementById("Cat").innerHTML = Cat;
+	document.getElementById("com").innerHTML = com;
+}
+}
+</script>
+		<script src="main.js"></script>
+		<script src="jquery/jquery/dist/jquery.min.js"></script>
+        <script src="bootstrap/dist/js/bootstrap.min.js"></script>
+		
+</body>
+</html>

@@ -1,0 +1,11 @@
+.navbar-inverse{
+	 background-color: blue;
+}
+
+.navbar{
+	border-color: #0aa9ff;
+}
+
+.navbar-brand{
+	letter-spacing: 3px;
+}
